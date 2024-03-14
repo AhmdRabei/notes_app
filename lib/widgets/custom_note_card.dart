@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CustomNoteCard extends StatelessWidget {
   const CustomNoteCard({super.key});
@@ -6,6 +7,7 @@ class CustomNoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.only(left: 16, bottom: 16, top: 16),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.blueAccent,
@@ -33,9 +35,12 @@ class CustomNoteCard extends StatelessWidget {
               icon: const Icon(Icons.delete),
             ),
           ),
-          const Text(
-            'May 22 ,2022',
-            style: TextStyle(fontSize: 14),
+          const Padding(
+            padding: EdgeInsets.only(right: 24),
+            child: Text(
+              'May 22 ,2022',
+              style: TextStyle(fontSize: 14),
+            ),
           )
         ],
       ),
