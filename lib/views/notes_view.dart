@@ -6,8 +6,18 @@ class NotesView extends StatelessWidget {
   static String id = 'NotesView';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomAppBar(),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            CustomAppBar(),
+          ],
+        ),
+      ),
     );
   }
 }
