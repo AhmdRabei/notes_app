@@ -6,16 +6,18 @@ class CustomButton extends StatelessWidget {
   final String buttonTitle;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 45,
-      decoration: BoxDecoration(
-        color: kPrimaryColor,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Center(
-        child: Text(
-          buttonTitle,
-          style: const TextStyle(fontSize: 22),
+    return GestureDetector(
+      child: Container(
+        height: 45,
+        decoration: BoxDecoration(
+          color: kPrimaryColor,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Center(
+          child: Text(
+            buttonTitle,
+            style: const TextStyle(fontSize: 22),
+          ),
         ),
       ),
     );

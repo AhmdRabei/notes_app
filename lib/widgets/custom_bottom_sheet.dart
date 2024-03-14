@@ -9,26 +9,31 @@ class CustomBottomShet extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 30,
-          ),
-          CustomTextField(
-            title: 'Title',
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          CustomTextField(
-            title: 'Content',
-            maxLines: 5,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          CustomButton(buttonTitle: 'Add Note'),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            CustomTextField(
+              title: 'Title',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            CustomTextField(
+              title: 'Content',
+              maxLines: 5,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            CustomButton(buttonTitle: 'Add Note'),
+            SizedBox(
+              height: 25,
+            ),
+          ],
+        ),
       ),
     );
   }
