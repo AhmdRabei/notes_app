@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class CustomNoteCard extends StatelessWidget {
-  const CustomNoteCard({super.key});
-
+  const CustomNoteCard({
+    super.key,
+    required this.note,
+  });
+  final NotesModel note;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,16 +27,16 @@ class CustomNoteCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text(
-                  'Flutter tips',
-                  style: TextStyle(
+                title: Text(
+                  note.title,
+                  style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                subtitle: const Text(
-                  'Make your own future with flutter ',
-                  style: TextStyle(
+                subtitle: Text(
+                  note.subTitle,
+                  style: const TextStyle(
                     fontSize: 23,
                   ),
                 ),
@@ -44,11 +48,11 @@ class CustomNoteCard extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 24),
+              Padding(
+                padding: const EdgeInsets.only(right: 24),
                 child: Text(
-                  'May 22 ,2022',
-                  style: TextStyle(fontSize: 14),
+                  note.date,
+                  style: const TextStyle(fontSize: 14),
                 ),
               )
             ],
