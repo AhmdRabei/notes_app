@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_states.dart';
+import 'package:notes_app/cubits/add_note_cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
 
 class CustomBottomShet extends StatelessWidget {
@@ -15,10 +16,9 @@ class CustomBottomShet extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNotesCubit, AddNoteStates>(
           listener: (context, state) {
-            if (state is AddNoteFailure) {
-              print('error ${state.errorMessage}');
-            }
+            if (state is AddNoteFailure) {}
             if (state is AddNoteSuccess) {
+              BlocProvider.of<NotesCubit>(context).notes();
               Navigator.pop(context);
             }
           },
