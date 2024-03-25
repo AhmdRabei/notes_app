@@ -20,7 +20,7 @@ class CustomNoteCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16, bottom: 16, top: 16),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            color: Colors.blueAccent,
+            color: Color(note.color),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
