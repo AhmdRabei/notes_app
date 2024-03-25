@@ -16,7 +16,9 @@ class CustomNoteCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, EditNoteView.id);
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return EditNoteView(notes: note);
+          }));
         },
         child: Container(
           padding: const EdgeInsets.only(left: 16, bottom: 16, top: 16),
