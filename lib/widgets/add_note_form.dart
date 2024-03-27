@@ -6,6 +6,7 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_states.dart';
 import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/widgets/colors_list_view.dart';
 import 'package:notes_app/widgets/custom_button.dart';
+import 'package:notes_app/widgets/custom_snack_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -73,6 +74,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         subTitle: subTitle!,
                         date: formatCurrnetDate);
                     BlocProvider.of<AddNotesCubit>(context).addNote(noteModel);
+                    costomSnackBar(context, 'Note Added');
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});

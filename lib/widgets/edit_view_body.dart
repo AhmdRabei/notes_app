@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
+import 'package:notes_app/widgets/custom_snack_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 import 'package:notes_app/widgets/edit_note_colors_list.dart';
 
@@ -28,6 +29,7 @@ class _EditViewBodyState extends State<EditViewBody> {
             widget.notes.subTitle = content ?? widget.notes.subTitle;
             widget.notes.save();
             BlocProvider.of<NotesCubit>(context).notes();
+            costomSnackBar(context, 'The note has been modified');
             Navigator.pop(context);
           },
           appBartitle: 'Edit Note',
